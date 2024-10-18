@@ -32,11 +32,11 @@ describe("Unit Tests", () => {
     it("Logic handles a puzzle string with invalid characters (not 1-9 or .)", () => {
         const badPuzzle =
             "1.5..2.84..63.12.7.2..5.....9..1....8.2.3AE4.3.7.2..9.47...8..1..16....926914.37.";
-        assert.isFalse(solver.validate(badPuzzle));
+        assert.equal(solver.validate(badPuzzle), 'Invalid characters in puzzle');
     });
 
     it("Logic handles a puzzle string that is not 81 characters in length", () => {
-        assert.isFalse(solver.validate("0.987.444.3"));
+        assert.equal(solver.validate("0.987.444.3"), 'Expected puzzle to be 81 characters long');
     });
 
     it("Logic handles a valid row placement", () => {
