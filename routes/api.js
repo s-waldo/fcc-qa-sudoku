@@ -39,7 +39,16 @@ module.exports = function (app) {
         next();
     };
 
+    const requiredFieldCheck = (req, res, next) => {
+        if (!req.body.puzzle || !req.body.value || !req.body.coordinate) {
+            res.json({error: "Required field(s) missing"})
+            return
+        }
+        next()
+    }
+
     app.route("/api/check").post(
+        requiredFieldCheck,
         puzzleValidation,
         coordinateValidation,
         valueValidation,

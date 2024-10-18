@@ -16,7 +16,7 @@ class SudokuSolver {
 
     validate(puzzleString) {
         if (puzzleString.length !== 81) {
-            return "Expected puzzle to be 81 characters";
+            return "Expected puzzle to be 81 characters long";
         }
         for (const char of puzzleString) {
             let regex = /[0-9\.]/;
