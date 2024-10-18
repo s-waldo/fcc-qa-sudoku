@@ -72,7 +72,7 @@ module.exports = function (app) {
                 errors.push("row");
             }
             if (!solver.checkColPlacement(puzzle, row, col, value)) {
-                errors.push("col");
+                errors.push("column");
             }
             if (!solver.checkRegionPlacement(puzzle, row, col, value)) {
                 errors.push("region");

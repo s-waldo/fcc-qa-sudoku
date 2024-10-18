@@ -165,7 +165,7 @@ describe("Functional Tests", () => {
                 assert.isBoolean(res.body.valid);
                 assert.isFalse(res.body.valid);
                 assert.isArray(res.body.conflict);
-                assert.deepEqual(res.body.conflict, ["row", "col", "region"]);
+                assert.deepEqual(res.body.conflict, ["row", "column", "region"]);
                 done();
             });
     });
